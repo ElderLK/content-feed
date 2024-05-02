@@ -18,11 +18,15 @@ export const Comments: React.FC<Props> = ({ comments }) => {
   };
 
   return (
-    <div className="mt-4  w-full">
+    <div className="mt-4 w-full">
       {showAll ? (
         <div className="leading-normal max-h-40 overflow-y-auto">
           {comments.map((c, idx) => (
-            <div key={idx} className="flex">
+            <div
+              key={idx}
+              className="flex"
+              aria-label={`Comment number ${idx + 1}`}
+            >
               <Avatar>
                 <AvatarImage src={c.profilePic} />
                 <AvatarFallback>{c.author.substring(1, 3)}</AvatarFallback>
@@ -47,6 +51,7 @@ export const Comments: React.FC<Props> = ({ comments }) => {
         <button
           className="bg-white text-slate-400 px-2 py-1"
           onClick={toggleShowAll}
+          aria-label={`View all ${comments.length} comments`}
         >
           View all {comments.length} comments
         </button>

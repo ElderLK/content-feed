@@ -13,7 +13,6 @@ export const ReadMore: React.FC<Props> = ({ content }) => {
 
   React.useEffect(() => {
     // Check if content exceeds three lines and set expanded state accordingly
-    console.log("contentRef.current", contentRef.current);
     if (contentRef.current) {
       const lineHeight = parseInt(
         window.getComputedStyle(contentRef.current).lineHeight

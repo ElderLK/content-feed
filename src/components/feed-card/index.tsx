@@ -17,7 +17,7 @@ type Props = FeedItem;
 
 export const FeedCard: React.FC<Props> = (feedItem) => {
   return (
-    <Card className="max-w-xl">
+    <Card className="max-w-xl w-full">
       <CardHeader className="h-80 relative m-2 rounded-md overflow-hidden">
         <Image
           src={feedItem.imageUri}

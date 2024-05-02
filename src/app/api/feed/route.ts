@@ -23,7 +23,7 @@ export async function GET(req: NextRequest): Promise<NextResponse<FeedItem[]>> {
   }
 
   if (validationErrors.length) {
-    return new NextResponse(JSON.stringify(validationErrors), {
+    return new NextResponse(JSON.stringify({ errors: validationErrors }), {
       status: httpStatus.badRequest,
     });
   }

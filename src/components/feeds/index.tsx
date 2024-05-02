@@ -25,11 +25,6 @@ export const Feeds: React.FC<Props> = ({ apiUrl, currentPage }) => {
         );
         const data = await response.json();
         setFeeds((prevFeeds) => {
-          console.log(
-            "prevFeeds[prevFeeds.length - 1]?.id",
-            prevFeeds[prevFeeds.length - 1]?.id
-          );
-          console.log(" data[data.length]?.id", data[data.length - 1]?.id);
           if (
             prevFeeds[prevFeeds.length - 1]?.id !== data[data.length - 1]?.id
           ) {
